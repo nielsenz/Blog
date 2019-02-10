@@ -45,7 +45,7 @@ DEFAULT_PAGINATION = 10
 #RELATIVE_URLS = True
 
 ##Will plugins ever work? I'll keep you posted/
-#PLUGIN_PATHS = ['./plugins']
+PLUGIN_PATHS = ['./plugins']
 #PLUGINS = ['neighbors']
 
 THEME ="pelican-themes/Flex"	#Theme number 3. It works with Google Analytics!
