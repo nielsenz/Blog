@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://micro.blog/zachnielsen" rel="me" />
+  <link href="https://twitter.com/niels506" rel="me">
+  <link href="https://github.com/nielsenz" rel="me">
+  <link href="http://sitewriter.net/zachnielsen.org/micropub" rel="micropub">
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="./theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="./theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/font-awesome.min.css">
+
+
+    <link href="http://zachnielsen.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Zach Nielsen's Blog Atom">
+
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+
+<meta name="author" content="Zach Nielsen" />
+<meta name="description" content="A data visualization project many months in the making, using tableau and python." />
+<meta name="keywords" content="visualizations, python, tableau, national park service">
+<meta property="og:site_name" content="Zach Nielsen's Blog"/>
+<meta property="og:title" content="Manipulating and Displaying National Park Service Data"/>
+<meta property="og:description" content="A data visualization project many months in the making, using tableau and python."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="./manipulating-and-displaying-national-park-service-data.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2017-08-10 00:00:00-04:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="./author/zach-nielsen.html">
+<meta property="article:section" content="Analysis"/>
+<meta property="article:tag" content="visualizations"/>
+<meta property="article:tag" content="python"/>
+<meta property="article:tag" content="tableau"/>
+<meta property="article:tag" content="national park service"/>
+<meta property="og:image" content="../images/logo.png">
+  <title>Zach Nielsen's Blog &ndash; Manipulating and Displaying National Park Service Data</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href=".">
+        <img src="../images/logo.png" alt="Zach Nielsen" title="Zach Nielsen">
+      </a>
+      <h1><a href=".">Zach Nielsen</a></h1>
+<p>Data Driven Analyst | Transforming Numbers into Stories</p>      <nav>
+        <ul class="list">
+          <li><a href="./pages/about-page.html#about-page">Colophon</a></li>
+          <li><a href="./pages/current-resume.html#current-resume">Current&nbsp;Resume</a></li>
+          <li><a href="./pages/things-to-do-in-boston.html#things-to-do-in-boston">Things to do in&nbsp;Boston</a></li>
+        </ul>
+      </nav>
+      <ul class="social">
+        <li><a class="sc-linkedin" href="https://www.linkedin.com/in/nielsenz" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        <li><a class="sc-twitter" href="https://twitter.com/Niels506" target="_blank"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="sc-github" href="https://github.com/nielsenz" target="_blank"><i class="fa fa-github"></i></a></li>
+      </ul>
+    </div>
+  </aside>
+  <main>
+
+<article>
+  <header>
+    <h1 id="manipulating-and-displaying-national-park-service-data">Manipulating and Displaying National Park Service&nbsp;Data</h1>
+    <p>Posted on Thu 10 August 2017 in <a href="./category/analysis.html">Analysis</a></p>
+  </header>
+  <div>
+    <p><strong><span class="caps">TL</span>;<span class="caps">DR</span></strong> I used Python to expand a spreadsheet I got from the United States National Park Service in order to visualize it in with Tableau. I threw the code up <a href="https://github.com/nielsenz/National-Parks-Expander">on Github</a> and the data visualization can be found <a href="https://public.tableau.com/profile/zach.nielsen#!/vizhome/NationalParkServiceAttendanceAnalysis/NationalParkAttendenceAnalysis">on Tableau</a>.</p>
+<p>My first experience with Python came when I took a data scraping class in college. From there, I ignored it for about a year until I picked up a book titled <em>Automate the Boring Stuff</em>. The book is terrific and details practical applications of programming, which my computer science degree was lacking. From there, I played around a bit with a simple script that <a href="https://github.com/nielsenz/pdf-Combiner">combines two <span class="caps">PDF</span>&nbsp;files.</a> </p>
+<p>I then found a problem that I could practice my excel manipulation skills by programming with Python. As someone who has always loved the outdoors, I found an excel spreadsheet that has the attendance for every national park since 1904. In order to best visualize the data, I needed to manipulate the excel document so that it was in the correct format for visualization. I accomplished this by <em>expanding</em> the dataset. Initially, I looked at a spreadsheet that had the <strong>Years</strong> on top and the <strong>Parks</strong> running down the spreadsheet. However, I needed a spreadsheet with three columns: Park, Year, and&nbsp;Attendance. </p>
+<p>Overall, I had a great time writing this program. It was fun experimenting with and getting used to openpyxl and pandas. The meat of the program is in lines 13-27, with two loops to loop through each year per park and then per&nbsp;park.</p>
+<p><code>for parks in range(2,376):</code>
+<code>parkCode = 'B' + str(parks)</code>
+<code>parkNameCode = 'A' + str(parks)</code>
+<code>currentPark = sheet[parkCode].value</code>
+<code>currentParkName = sheet[parkNameCode].value</code>
+<code>#And then this should get all the years per park</code>
+<code>for years in range(3,115):</code>
+<code>year = sheet.cell(row=1, column=years).value</code>
+<code>attendance = sheet.cell(row=parks, column=years).value</code>
+<code>if attendance == None:</code>
+<code>attendance = 0</code>
+<code>df2 = pd.DataFrame({"Park Name" : [currentParkName],"Park": [currentPark], "Date" : [year], "Attendance" : [attendance]}, index = [coolindex])</code>
+<code>frames = [df, df2]</code>
+<code>df = pd.concat(frames)</code>
+<code>coolindex=coolindex+1</code></p>
+<p>It’s also a good sign that I now would do things differently. After my first <a href="https://www.kaggle.com/znielsen/analysis-and-prediction-of-student-performance">data science</a> kernel on Kaggle, I now have more experience with Pandas and would use it exclusively. Openpyxl gave me the ability to select a cell by the row and column number, which was very&nbsp;useful. </p>
+<h2>Visualizations with&nbsp;Tableau</h2>
+<p>Now that I have the spreadsheet the way I like it, I can now visualize the data using Tableau. My goal is to have two graphs: one that displayed average attendance versus total attendance and a heat map of the United States showing the national park attendance. This was my first time making a heat map in Tableau and it could have not gone&nbsp;easier. </p>
+<h3>Attendance versus Average&nbsp;Attendance</h3>
+<p>When I first looked at the data, I wondered how the average attendance per park differed from the overall attendance. Were there years that had a high average attendance but low overall attendance? Or as more parks were added to the national parks system, did average attendance decrease? By graphing this, there’s an intuitive way to see if the trends are the same or not. As we can see, there are slight variations but overall the trend lines are the&nbsp;same. </p>
+<p>The one design decision that was interesting to think about was if I should add dual Y axises, putting the two lines on the same graph. I decided against it, because I think that dual axises are misleading. If I tried to synchronize the axises, the average attendance is so much lower than the overall attendance it just looks like a horizontal line near zero. Although hilarious, it’s ultimately useless and that’s why I chose to stick with the two separate&nbsp;graphs. </p>
+<h3><span class="caps">US</span> National Parks Heat&nbsp;Map</h3>
+<p>My other visualization that I wanted to create was a heat map. For those unaware, a heat map is a type of graph that colors different fields darker depending on the value. Oftentimes a heat map is applied to a spreadsheet with darker values surrounding higher values. For example, if you had a spreadsheet with monthly sales, a darker green would mean a higher value than a lighter&nbsp;green. </p>
+<p>The other place where heat maps are used are to show data on a map. By placing all of the national parks on a map of the United States, the national parks that are darker have more visitors than those which are lighter. It would be fun to look at different parts of the United States and see if there’s any correlations, as well as just see if the visitors move westward as more parks are opened in the&nbsp;west. </p>
+<p>The heat park itself was pretty easy to create. The mapping data was also provided from the park service, and I used a simple join to the data I created with the python file to associate it together in Tableau. From there, I just had one remaining design choice: should the user be allowed to select one year at a time, or should the user be allowed to select multiple years at&nbsp;once. </p>
+<p>For those that are unaware, Tableau has a bunch of ways to filter dates. The two that apply here are a singular selection <sup id="fnref-1"><a class="footnote-ref" href="#fn-1">1</a></sup> or multiple date selection.<sup id="fnref-2"><a class="footnote-ref" href="#fn-2">2</a></sup> Both have pros and cons, the most notable being the multiple selection is messy but more efficient and visa versa. Ultimately, I decided to go with the multiple selection, but I may transfer back to the single use if users are having trouble with the multiple&nbsp;selection. </p>
+<h2>Conclusion</h2>
+<p>It was excellent to get back into the swing of things. Instead of using <span class="caps">SQL</span> to manipulate the data, I can see how Python fits into a data visualization environment. I could have even graphed the data using Python; however, I wanted to practice my mapping skills in Tableau. I can’t wait to see how this graph looks and what other insights may come from this&nbsp;data. </p>
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn-1">
+<p>Meaning that the user can select one and only one year.&#160;<a class="footnote-backref" href="#fnref-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn-2">
+<p>Meaning that whatever dates the user wants to select can be selected. &#160;<a class="footnote-backref" href="#fnref-2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="./tag/visualizations.html">visualizations</a>
+      <a href="./tag/python.html">python</a>
+      <a href="./tag/tableau.html">tableau</a>
+      <a href="./tag/national-park-service.html">national park service</a>
+    </p>
+  </div>
+</article>
+
+    <footer>
+        <p>&copy; Zach Nielsen 2018</p>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a></p>    </footer>
+  </main>
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-90668360-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Zach Nielsen's Blog ",
+  "url" : ".",
+  "image": "../images/logo.png",
+  "description": ""
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "name": "Manipulating and Displaying National Park Service Data",
+  "headline": "Manipulating and Displaying National Park Service Data",
+  "datePublished": "2017-08-10 00:00:00-04:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Zach Nielsen",
+    "url": "./author/zach-nielsen.html"
+  },
+  "image": "../images/logo.png",
+  "url": "./manipulating-and-displaying-national-park-service-data.html",
+  "description": "A data visualization project many months in the making, using tableau and python."
+}
+</script></body>
+</html>

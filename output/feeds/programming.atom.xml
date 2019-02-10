@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Zach Nielsen's Blog - Programming</title><link href="http://zachnielsen.org/" rel="alternate"></link><link href="http://zachnielsen.org/feeds/programming.atom.xml" rel="self"></link><id>http://zachnielsen.org/</id><updated>2017-03-20T00:00:00-04:00</updated><entry><title>7 Lessons from iOS Development</title><link href="http://zachnielsen.org/7-lessons-from-ios-development.html" rel="alternate"></link><published>2017-03-20T00:00:00-04:00</published><updated>2017-03-20T00:00:00-04:00</updated><author><name>Zach Nielsen</name></author><id>tag:zachnielsen.org,2017-03-20:/7-lessons-from-ios-development.html</id><summary type="html">&lt;p&gt;7 Lessons to make iOS development a little easier for&amp;nbsp;beginners.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Travel has kept me from posting, but I have been experimenting with iOS development and have some early lessons. Below are some miscellaneous&amp;nbsp;thoughts:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Planning is key. It’s worth drawing your app out on paper to see how the various parts of the app work together. For example, where should the buttons go? How should everything interact? What should happen in the edge cases? Having an early plan makes development significantly&amp;nbsp;easier.  &lt;/li&gt;
+&lt;li&gt;Look at the market beforehand. I had one promising app idea that I wrote out and was about to start development on. However, I did a quick google search and my app idea had already been on the market for three years! &lt;strong&gt;Having a great app idea is one thing, but having a great app idea first is the crucial&amp;nbsp;thing.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;The act of development is much easier than I have anticipated. I suspect that I built up how difficult app development would be in my head, but it was surprisingly easy to understand. I forgot how pleasant it is to work with a complex language that has prebuilt methods to get information. A google search often finds me a one line method to accomplish what I thought would be a complex task.&lt;sup id="fnref-1"&gt;&lt;a class="footnote-ref" href="#fn-1"&gt;1&lt;/a&gt;&lt;/sup&gt; &lt;/li&gt;
+&lt;li&gt;Related: for all programming problems it is instrumental to first google these problems to see if an answer already exists.&lt;sup id="fnref-2"&gt;&lt;a class="footnote-ref" href="#fn-2"&gt;2&lt;/a&gt;&lt;/sup&gt; Coding is building on the work of giants, so why bother reinventing the wheel? Borrow liberally, and spend your time on interesting and novel&amp;nbsp;ideas.  &lt;/li&gt;
+&lt;li&gt;To expand on the above point, I think of a programmer as combining disparate parts to form a new whole. Given all of the code available on the internet, I consider myself a builder with tools available from a number of different sources. Add a little bit from this Stack Overflow post, a little from this blog post, some unique code from yours truly, and then I have a pretty cool&amp;nbsp;app.&lt;/li&gt;
+&lt;li&gt;Making money on the App Store is harder than ever. I’ve been following the &lt;a href="https://marco.org/2017/02/20/overcast3"&gt;story of Overcast&lt;/a&gt; and seeing Arment’s struggles and then success to make money shows that monetization is worth thinking&amp;nbsp;about. &lt;/li&gt;
+&lt;li&gt;Good media assets are very important. Any pictures, sounds, etc. will help distinguish your app from the&amp;nbsp;crowd.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Hopefully this list helps out any new iOS programmers. The main note may be to dive right in. Nothing is ever as terrifying as it&amp;nbsp;appears. &lt;/p&gt;
+&lt;div class="footnote"&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id="fn-1"&gt;
+&lt;p&gt;Want to make a button hidden? Just set isHidden = true. Surprisingly simple. &amp;#160;&lt;a class="footnote-backref" href="#fnref-1" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn-2"&gt;
+&lt;p&gt;Especially if these problems are relatively basic in nature. &amp;#160;&lt;a class="footnote-backref" href="#fnref-2" title="Jump back to footnote 2 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</content><category term="iOS"></category><category term="development"></category><category term="thoughts"></category><category term="apple"></category></entry></feed>

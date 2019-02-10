@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://micro.blog/zachnielsen" rel="me" />
+  <link href="https://twitter.com/niels506" rel="me">
+  <link href="https://github.com/nielsenz" rel="me">
+  <link href="http://sitewriter.net/zachnielsen.org/micropub" rel="micropub">
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="./theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="./theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/font-awesome.min.css">
+
+
+    <link href="http://zachnielsen.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Zach Nielsen's Blog Atom">
+
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+
+<meta name="author" content="Zach Nielsen" />
+<meta name="description" content="An introduction to Game Theory by way of FiveThirtyEight and The Riddler…" />
+<meta name="keywords" content="background, economics, game theory">
+<meta property="og:site_name" content="Zach Nielsen's Blog"/>
+<meta property="og:title" content="A FiveThirtyEight Riddler Attempt"/>
+<meta property="og:description" content="An introduction to Game Theory by way of FiveThirtyEight and The Riddler…"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="./a-fivethirtyeight-riddler-attempt.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2016-12-15 00:00:00-05:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="./author/zach-nielsen.html">
+<meta property="article:section" content="Economics"/>
+<meta property="article:tag" content="background"/>
+<meta property="article:tag" content="economics"/>
+<meta property="article:tag" content="game theory"/>
+<meta property="og:image" content="../images/logo.png">
+  <title>Zach Nielsen's Blog &ndash; A FiveThirtyEight Riddler Attempt</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href=".">
+        <img src="../images/logo.png" alt="Zach Nielsen" title="Zach Nielsen">
+      </a>
+      <h1><a href=".">Zach Nielsen</a></h1>
+<p>Data Driven Analyst | Transforming Numbers into Stories</p>      <nav>
+        <ul class="list">
+          <li><a href="./pages/about-page.html#about-page">Colophon</a></li>
+          <li><a href="./pages/current-resume.html#current-resume">Current&nbsp;Resume</a></li>
+          <li><a href="./pages/things-to-do-in-boston.html#things-to-do-in-boston">Things to do in&nbsp;Boston</a></li>
+        </ul>
+      </nav>
+      <ul class="social">
+        <li><a class="sc-linkedin" href="https://www.linkedin.com/in/nielsenz" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        <li><a class="sc-twitter" href="https://twitter.com/Niels506" target="_blank"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="sc-github" href="https://github.com/nielsenz" target="_blank"><i class="fa fa-github"></i></a></li>
+      </ul>
+    </div>
+  </aside>
+  <main>
+
+<article>
+  <header>
+    <h1 id="a-fivethirtyeight-riddler-attempt">A FiveThirtyEight Riddler&nbsp;Attempt</h1>
+    <p>Posted on Thu 15 December 2016 in <a href="./category/economics.html">Economics</a></p>
+  </header>
+  <div>
+    <p>While reading a <a href="http://fivethirtyeight.com/features/how-much-gold-would-push-you-into-a-war/">FiveThirtyEight riddler post,</a> I saw that the classic riddle had to do with game theory. As I&#8217;ve recently been reading about game theory, I thought it would be interesting to work through the problem and see what I come up&nbsp;with.</p>
+<p>The rules of the game are as follows: there are two countries with a military strength that is a random uniform number<sup id="fnref-1"><a class="footnote-ref" href="#fn-1">1</a></sup> between 0 and 1. Each country only knows their strength, and these two countries can choose to either declare war or peace. If either country chooses war, the two countries enter into war with the higher strength country obtaining the wealth of the two countries. If both countries choose peace, then they remain with their wealth. Each country starts with a wealth of 1 trillion dollars. The question now is to solve the game. What is the best move for each&nbsp;country?</p>
+<h2>Getting&nbsp;Nashty</h2>
+<p>The first instance of the game is where the moves are made simultaneously<sup id="fnref-2"><a class="footnote-ref" href="#fn-2">2</a></sup>. In order to find the &#8220;answer&#8221; to the game, I often pick a strategy and play out the game with that strategy to see what happens<sup id="fnref-3"><a class="footnote-ref" href="#fn-3">3</a></sup>. So assume that Country A chooses to declare war whenever it&#8217;s strength is above .5 <sup id="fnref-4"><a class="footnote-ref" href="#fn-4">4</a></sup>. Because each country is playing the same game, this means that they both follow this rule initially. However, it makes sense for Country B to lower the threshold to .25 (half of the original value). Now you&#8217;re probably wondering how this makes sense. If A&#8217;s strength is above .5, it will always declare war and Country B has to fight no matter what. On the other hand, say A&#8217;s strength is below the .5 threshold. With Country B lowering the threshold necessary to declare war, it will win half of the time and lose half of the time, making a net gain<sup id="fnref-5"><a class="footnote-ref" href="#fn-5">5</a></sup>. </p>
+<p>But! Say Country A also employs an economist well versed in game theory and this economist predicts what Country B will do. Country A will then lower their threshold to .125 (half of .25) for the exact same reason! This arms race will continue until the threshold for each country is at zero, and each country declares war. Thus, the best move<sup id="fnref-6"><a class="footnote-ref" href="#fn-6">6</a></sup> is to have each country always declare&nbsp;war. </p>
+<p>If the game shifts to a version where Country A acts first, and then Country B acts, not a lot changes. If Country A declares peace, Country B knows that is a sign of weakness and will therefore declare war<sup id="fnref-7"><a class="footnote-ref" href="#fn-7">7</a></sup>. If the payout of winning the war is increased, all it means is that war will be more valuable and thus will be declared more often as well. Thus, war will always be declared no matter&nbsp;what. </p>
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn-1">
+<p>In human speak, there&#8217;s a equally random chance it&#8217;ll be any decimal. If the decimals make it tough to understand, just make it any number between 0 and 10.&#160;<a class="footnote-backref" href="#fnref-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn-2">
+<p>Meaning that if I&#8217;m Country A, I don&#8217;t know Country B&#8217;s move&#160;<a class="footnote-backref" href="#fnref-2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn-3">
+<p>My optimal strategy for solving game theory, if you will.&#160;<a class="footnote-backref" href="#fnref-3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn-4">
+<p>The expected utility of declaring war says that it makes sense to declare war whenever the strength of a country is above .5. In other words, the country will declare war when it expects to earn more money from war than from peace. With a strength of .5, the country will be indifferent between war and peace. It earns 1 trillion if peace holds, and it expects to win the war 50% of the time. .5 multiplied by 2 trillion plus .5 multiplied by zero is 1 trillion. &#160;<a class="footnote-backref" href="#fnref-4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn-5">
+<p>Remember, we call indifference a win. Makes the math easier.&#160;<a class="footnote-backref" href="#fnref-5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn-6">
+<p>The Nash Equilibrium! &#160;<a class="footnote-backref" href="#fnref-6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn-7">
+<p>If Country A declares war, it doesn&#8217;t matter what Country B does regardless.&#160;<a class="footnote-backref" href="#fnref-7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="./tag/background.html">background</a>
+      <a href="./tag/economics.html">economics</a>
+      <a href="./tag/game-theory.html">game theory</a>
+    </p>
+  </div>
+</article>
+
+    <footer>
+        <p>&copy; Zach Nielsen 2018</p>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a></p>    </footer>
+  </main>
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-90668360-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Zach Nielsen's Blog ",
+  "url" : ".",
+  "image": "../images/logo.png",
+  "description": ""
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "name": "A FiveThirtyEight Riddler Attempt",
+  "headline": "A FiveThirtyEight Riddler Attempt",
+  "datePublished": "2016-12-15 00:00:00-05:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Zach Nielsen",
+    "url": "./author/zach-nielsen.html"
+  },
+  "image": "../images/logo.png",
+  "url": "./a-fivethirtyeight-riddler-attempt.html",
+  "description": "An introduction to Game Theory by way of FiveThirtyEight and The Riddler…"
+}
+</script></body>
+</html>

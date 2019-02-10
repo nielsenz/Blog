@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://micro.blog/zachnielsen" rel="me" />
+  <link href="https://twitter.com/niels506" rel="me">
+  <link href="https://github.com/nielsenz" rel="me">
+  <link href="http://sitewriter.net/zachnielsen.org/micropub" rel="micropub">
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="./theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="./theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/font-awesome.min.css">
+
+
+    <link href="http://zachnielsen.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Zach Nielsen's Blog Atom">
+
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+
+<meta name="author" content="Zach Nielsen" />
+<meta name="description" content="A great introduction on how to get more out of your computer by using python." />
+<meta name="keywords" content="guides, python, selenium, pyautogui, automation">
+<meta property="og:site_name" content="Zach Nielsen's Blog"/>
+<meta property="og:title" content="Introduction to Selenium and PyAutoGui"/>
+<meta property="og:description" content="A great introduction on how to get more out of your computer by using python."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="./introduction-to-selenium-and-pyautogui.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2018-02-02 00:00:00-05:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="./author/zach-nielsen.html">
+<meta property="article:section" content="Guides"/>
+<meta property="article:tag" content="guides"/>
+<meta property="article:tag" content="python"/>
+<meta property="article:tag" content="selenium"/>
+<meta property="article:tag" content="pyautogui"/>
+<meta property="article:tag" content="automation"/>
+<meta property="og:image" content="../images/logo.png">
+  <title>Zach Nielsen's Blog &ndash; Introduction to Selenium and PyAutoGui</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href=".">
+        <img src="../images/logo.png" alt="Zach Nielsen" title="Zach Nielsen">
+      </a>
+      <h1><a href=".">Zach Nielsen</a></h1>
+<p>Data Driven Analyst | Transforming Numbers into Stories</p>      <nav>
+        <ul class="list">
+          <li><a href="./pages/about-page.html#about-page">Colophon</a></li>
+          <li><a href="./pages/current-resume.html#current-resume">Current&nbsp;Resume</a></li>
+          <li><a href="./pages/things-to-do-in-boston.html#things-to-do-in-boston">Things to do in&nbsp;Boston</a></li>
+        </ul>
+      </nav>
+      <ul class="social">
+        <li><a class="sc-linkedin" href="https://www.linkedin.com/in/nielsenz" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        <li><a class="sc-twitter" href="https://twitter.com/Niels506" target="_blank"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="sc-github" href="https://github.com/nielsenz" target="_blank"><i class="fa fa-github"></i></a></li>
+      </ul>
+    </div>
+  </aside>
+  <main>
+
+<article>
+  <header>
+    <h1 id="introduction-to-selenium-and-pyautogui">Introduction to Selenium and&nbsp;PyAutoGui</h1>
+    <p>Posted on Fri 02 February 2018 in <a href="./category/guides.html">Guides</a></p>
+  </header>
+  <div>
+    <p>While looking for more ways to automate my computer using python, I found <a href="https://www.youtube.com/watch?v=dZLyfbSQPXI&amp;t=673s">this video</a> from PyBay2016 very informative. Presented by Al Sweigart, this video is a no nonsense look on how to get started with some basic&nbsp;automation. </p>
+<h2>Selenium</h2>
+<p>Selenium is used in testing web apps; however, it can also be used to automate any online activity. His selenium example looks like the&nbsp;following:</p>
+<p><code>from selenium import webdriver</code>
+<code>browser = webdriver.Firefox()</code>
+<code>brower.get('theurl.com’)</code>
+<code>element = browser.find_element_by_css_selector(the css selector)</code>
+<code>element.text</code> 
+<code>element.click()</code>
+<code>browser.quit()</code></p>
+<p>This example opens a web browser and navigates to a web page. From there, it finds a specific element, grabs the text and then clicks on that element. Selenium is useful because it can handle the minutiae that comes with navigating the&nbsp;web. </p>
+<p>Starting from the top, a simple <code>import selenium</code> does not work, the key is to import the web driver from selenium. Lines 2 and 3 start a browser on screen and navigates to the inputted <span class="caps">URL</span>.</p>
+<p>Line 4 is where the magic happens. Instead of trying to follow the <span class="caps">CSS</span> chain, I can inspect an element on screen <sup id="fnref-1"><a class="footnote-ref" href="#fn-1">1</a></sup>, and then copy the selector path directly from the developer&nbsp;tools. </p>
+<p>Other useful methods can be used to send keys, submit, and refresh a web&nbsp;page. </p>
+<h2>PyAutoGUI</h2>
+<p>PyAutoGUI is a package that is more useful with automating tasks on screen.<sup id="fnref-2"><a class="footnote-ref" href="#fn-2">2</a></sup> This module can be installed by using pip which looks like the following:  <code>pip install pyautogui</code>. </p>
+<p>In order to be useful, PyAutoGUI needs the pixel coordinates of where to click. To solve this problem, there is a useful function called <code>displayMousePosition()</code>. By running this function, the program will give a real time position for where the mouse is on the screen. This is a great way to plan out where the mouse needs to be in order to click the desired&nbsp;targets.</p>
+<p>In addition, there’s several other useful functions: <code>click(), typewrite(), hotkey('ctrl','o')</code> are three of the most useful. Typewrite() is used to send text to the active program.  <code>moveTo()</code> and <code>moveRel()</code> will move the cursor to a specific point or in relation to where it is currently. Finally, there’s a <code>locateOnScreen()</code> method to match a screenshot with something on&nbsp;screen. </p>
+<p>The <a href="https://pyautogui.readthedocs.io/en/latest/introduction.html">documentation </a> online is well written and contains all of the methods that can be implemented with&nbsp;PyAutoGUI</p>
+<h2>Conclusion</h2>
+<p>Automation is clearly the area where I am slacking the most. These tools have great potential to simplify the daily computing process and I look forward to trying&nbsp;them. </p>
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn-1">
+<p>Right click, inspect element&#160;<a class="footnote-backref" href="#fnref-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn-2">
+<p>Which can be gathered by the <span class="caps">GUI</span> part of the name.&#160;<a class="footnote-backref" href="#fnref-2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="./tag/guides.html">guides</a>
+      <a href="./tag/python.html">python</a>
+      <a href="./tag/selenium.html">selenium</a>
+      <a href="./tag/pyautogui.html">pyautogui</a>
+      <a href="./tag/automation.html">automation</a>
+    </p>
+  </div>
+</article>
+
+    <footer>
+        <p>&copy; Zach Nielsen 2018</p>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a></p>    </footer>
+  </main>
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-90668360-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Zach Nielsen's Blog ",
+  "url" : ".",
+  "image": "../images/logo.png",
+  "description": ""
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "name": "Introduction to Selenium and PyAutoGui",
+  "headline": "Introduction to Selenium and PyAutoGui",
+  "datePublished": "2018-02-02 00:00:00-05:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Zach Nielsen",
+    "url": "./author/zach-nielsen.html"
+  },
+  "image": "../images/logo.png",
+  "url": "./introduction-to-selenium-and-pyautogui.html",
+  "description": "A great introduction on how to get more out of your computer by using python."
+}
+</script></body>
+</html>

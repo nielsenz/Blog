@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Zach Nielsen's Blog - 10 Facts</title><link href="http://zachnielsen.org/" rel="alternate"></link><link href="http://zachnielsen.org/feeds/10-facts.atom.xml" rel="self"></link><id>http://zachnielsen.org/</id><updated>2017-05-03T00:00:00-04:00</updated><entry><title>10 Things I Learning From Analyzing Data in Python</title><link href="http://zachnielsen.org/10-things-i-learning-from-analyzing-data-in-python.html" rel="alternate"></link><published>2017-05-03T00:00:00-04:00</published><updated>2017-05-03T00:00:00-04:00</updated><author><name>Zach Nielsen</name></author><id>tag:zachnielsen.org,2017-05-03:/10-things-i-learning-from-analyzing-data-in-python.html</id><summary type="html">&lt;p&gt;10 Rapid facts about programming with&amp;nbsp;python.&lt;/p&gt;</summary><content type="html">&lt;ol&gt;
+&lt;li&gt;I’m not sure if I will ever remember the colon after the if statement&amp;nbsp;condition. &lt;/li&gt;
+&lt;li&gt;Same for the for&amp;nbsp;statement &lt;/li&gt;
+&lt;li&gt;openpyxl is great for manipulating for excel&amp;nbsp;spreadsheets&lt;/li&gt;
+&lt;li&gt;(Except if you want to read from one workbook and write to&amp;nbsp;another).&lt;/li&gt;
+&lt;li&gt;Writing to a pandas data frame is a delightful intermediate&amp;nbsp;step!&lt;/li&gt;
+&lt;li&gt;Always use the concat method for merging two data&amp;nbsp;frames &lt;/li&gt;
+&lt;li&gt;To get rid of the first n rows of a data frame, one can drop said rows via the drop head(x)&amp;nbsp;command.&lt;/li&gt;
+&lt;li&gt;Which is super useful when the first row used to initialize the data frame is utter&amp;nbsp;gibberish. &lt;/li&gt;
+&lt;li&gt;Debugging a program is somewhat like &lt;a href="https://twitter.com/Niels506/status/859946189554421766"&gt;playing a&amp;nbsp;piano&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Sleep is key. No problems were ever solved at midnight (or 1,&amp;nbsp;2…)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;There’s going to be a full writeup on my python code coming soon. It definitely felt good to get back into the programming swing of things now that the semester is over. Nothing like an interesting data source to prompt a sense of&amp;nbsp;discovery!&lt;/p&gt;</content><category term="programming"></category><category term="python"></category><category term="data analysis"></category><category term="pandas"></category></entry></feed>

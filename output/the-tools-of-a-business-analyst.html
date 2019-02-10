@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://micro.blog/zachnielsen" rel="me" />
+  <link href="https://twitter.com/niels506" rel="me">
+  <link href="https://github.com/nielsenz" rel="me">
+  <link href="http://sitewriter.net/zachnielsen.org/micropub" rel="micropub">
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="./theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="./theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/font-awesome.min.css">
+
+
+    <link href="http://zachnielsen.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Zach Nielsen's Blog Atom">
+
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+
+<meta name="author" content="Zach Nielsen" />
+<meta name="description" content="Oftentimes I hear people worry about what tools to use. They should instead focus on the right way to think." />
+<meta name="keywords" content="python, analysis, business, tableau">
+<meta property="og:site_name" content="Zach Nielsen's Blog"/>
+<meta property="og:title" content="The Tools of a Business Analyst"/>
+<meta property="og:description" content="Oftentimes I hear people worry about what tools to use. They should instead focus on the right way to think."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="./the-tools-of-a-business-analyst.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2017-05-18 00:00:00-04:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="./author/zach-nielsen.html">
+<meta property="article:section" content="Guides"/>
+<meta property="article:tag" content="python"/>
+<meta property="article:tag" content="analysis"/>
+<meta property="article:tag" content="business"/>
+<meta property="article:tag" content="tableau"/>
+<meta property="og:image" content="../images/logo.png">
+  <title>Zach Nielsen's Blog &ndash; The Tools of a Business Analyst</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href=".">
+        <img src="../images/logo.png" alt="Zach Nielsen" title="Zach Nielsen">
+      </a>
+      <h1><a href=".">Zach Nielsen</a></h1>
+<p>Data Driven Analyst | Transforming Numbers into Stories</p>      <nav>
+        <ul class="list">
+          <li><a href="./pages/about-page.html#about-page">Colophon</a></li>
+          <li><a href="./pages/current-resume.html#current-resume">Current&nbsp;Resume</a></li>
+          <li><a href="./pages/things-to-do-in-boston.html#things-to-do-in-boston">Things to do in&nbsp;Boston</a></li>
+        </ul>
+      </nav>
+      <ul class="social">
+        <li><a class="sc-linkedin" href="https://www.linkedin.com/in/nielsenz" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        <li><a class="sc-twitter" href="https://twitter.com/Niels506" target="_blank"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="sc-github" href="https://github.com/nielsenz" target="_blank"><i class="fa fa-github"></i></a></li>
+      </ul>
+    </div>
+  </aside>
+  <main>
+
+<article>
+  <header>
+    <h1 id="the-tools-of-a-business-analyst">The Tools of a Business&nbsp;Analyst</h1>
+    <p>Posted on Thu 18 May 2017 in <a href="./category/guides.html">Guides</a></p>
+  </header>
+  <div>
+    <p>Today’s post is on the technical part of being a business analyst. In my experiences, I have found that being a business analyst requires you to be able to do three&nbsp;things: </p>
+<ul>
+<li>import/manage the&nbsp;data</li>
+<li>manipulate the&nbsp;data </li>
+<li>visualize the&nbsp;data. </li>
+</ul>
+<p>The tools you use to do that depend on both the company and what you are familiar with. For example, if the company is using <span class="caps">SQL</span> to store their data, it definitely makes sense to learn <span class="caps">SQL</span>. </p>
+<p>Besides that, there is a ton of inherent flexibility with choosing your tools. The most important thing is to be able to accomplish those three tasks that I listed above. Below I&#8217;ll list some examples of how these tools can fit together, if you’re unsure of what to learn&nbsp;first:</p>
+<ul>
+<li>Say you&#8217;re just on your own and want to create a simple heat map with the data already in excel. You&#8217;re pretty savvy with coding in Visual Basic, so all you have to do is google heat map excel and you&#8217;re off to the races. Checking off the three categories, you can manage, manipulate, and visualize the data all in excel. Easy&nbsp;peazy. </li>
+<li>Now let’s expand the above example: maybe you have to get and transform hundreds of observations from 36 different excel sheets. Doable yes, but difficult. Here, it makes sense to use a different, more capable tool. After reading reviews, you decide to download python and use pandas to manage your data (with the terrific read_csv function). The same three categories are covered, but in different ways. Importing the data is accomplished with read_csv, pandas is terrific with manipulating the data, and python has several libraries that let one visualize the&nbsp;data. </li>
+<li>Finally, we can look at a bigger organization. Say that you are working at a company with a <span class="caps">SQL</span> backend that prefers their graphs in Tableau. I’m sure there’s a python package that lets you Connect to a <span class="caps">SQL</span> Database and then import the data into pandas similar to the second example. However, the data may be changed daily. Instead of having to run the same python script every night, the most practical method here may be to build a new table in <span class="caps">SQL</span> and then connect to that table directly in Tableau. Here the steps are somewhat out of order; you manipulate the data in <span class="caps">SQL</span>, and then import it and visualize it in&nbsp;Tableau. </li>
+</ul>
+<p>The point here is that there are several different tools available for becoming a business analyst, each having their own positives and negatives. What matters more here is the ability to pick the tool that applies best in the situation. <span class="caps">SQL</span> and tableau is a great one-two punch, but if you need to do serious statistical transformations it is best to learn&nbsp;Python. </p>
+<p>If I had to give a recommendation on what people should learn, I would suggest Tableau. Practice finding data in excel spreadsheets and then importing them into Tableau. Once you run into the limitations of Tableau <sup id="fnref-1"><a class="footnote-ref" href="#fn-1">1</a></sup>, I would recommend moving onto Python; it’s the tool that easiest to manage as one person.<sup id="fnref-2"><a class="footnote-ref" href="#fn-2">2</a></sup> However, if you are committed to entering the business world, learning <span class="caps">SQL</span> may be&nbsp;critical.   </p>
+<p>If the idea of learning all these different tools is slightly terrifying, do not worry. The positive note is that these skills are similar and easily transferable. Dealing with a dataframe in Python with Pandas is similar to manipulating a data set in <span class="caps">SQL</span>. Graphing follows from this trend; the skills are similar regardless of what tool that you use. It is more important to learn the meta-skills of dealing with data analysis: what’s the best way to graph this, what am I looking to achieve here. The tools are the easy part, it’s the thinking that’s&nbsp;important. </p>
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn-1">
+<p>Or if cost is an issue&#160;<a class="footnote-backref" href="#fnref-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn-2">
+<p>And the free cost isn’t terrible either. &#160;<a class="footnote-backref" href="#fnref-2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="./tag/python.html">python</a>
+      <a href="./tag/analysis.html">analysis</a>
+      <a href="./tag/business.html">business</a>
+      <a href="./tag/tableau.html">tableau</a>
+    </p>
+  </div>
+</article>
+
+    <footer>
+        <p>&copy; Zach Nielsen 2018</p>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a></p>    </footer>
+  </main>
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-90668360-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Zach Nielsen's Blog ",
+  "url" : ".",
+  "image": "../images/logo.png",
+  "description": ""
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "name": "The Tools of a Business Analyst",
+  "headline": "The Tools of a Business Analyst",
+  "datePublished": "2017-05-18 00:00:00-04:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Zach Nielsen",
+    "url": "./author/zach-nielsen.html"
+  },
+  "image": "../images/logo.png",
+  "url": "./the-tools-of-a-business-analyst.html",
+  "description": "Oftentimes I hear people worry about what tools to use. They should instead focus on the right way to think."
+}
+</script></body>
+</html>

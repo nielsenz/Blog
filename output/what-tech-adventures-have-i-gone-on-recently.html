@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://micro.blog/zachnielsen" rel="me" />
+  <link href="https://twitter.com/niels506" rel="me">
+  <link href="https://github.com/nielsenz" rel="me">
+  <link href="http://sitewriter.net/zachnielsen.org/micropub" rel="micropub">
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="./theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="./theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/font-awesome.min.css">
+
+
+    <link href="http://zachnielsen.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Zach Nielsen's Blog Atom">
+
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+
+<meta name="author" content="Zach Nielsen" />
+<meta name="description" content="Recent tech upgrades now makes me more productive. Read and see!" />
+<meta name="keywords" content="tech tips, python, sublime text">
+<meta property="og:site_name" content="Zach Nielsen's Blog"/>
+<meta property="og:title" content="What Tech Adventures Have I Gone On Recently"/>
+<meta property="og:description" content="Recent tech upgrades now makes me more productive. Read and see!"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="./what-tech-adventures-have-i-gone-on-recently.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2017-04-15 00:00:00-04:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="./author/zach-nielsen.html">
+<meta property="article:section" content="Tech Tips"/>
+<meta property="article:tag" content="tech tips"/>
+<meta property="article:tag" content="python"/>
+<meta property="article:tag" content="sublime text"/>
+<meta property="og:image" content="../images/logo.png">
+  <title>Zach Nielsen's Blog &ndash; What Tech Adventures Have I Gone On Recently</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href=".">
+        <img src="../images/logo.png" alt="Zach Nielsen" title="Zach Nielsen">
+      </a>
+      <h1><a href=".">Zach Nielsen</a></h1>
+<p>Data Driven Analyst | Transforming Numbers into Stories</p>      <nav>
+        <ul class="list">
+          <li><a href="./pages/about-page.html#about-page">Colophon</a></li>
+          <li><a href="./pages/current-resume.html#current-resume">Current&nbsp;Resume</a></li>
+          <li><a href="./pages/things-to-do-in-boston.html#things-to-do-in-boston">Things to do in&nbsp;Boston</a></li>
+        </ul>
+      </nav>
+      <ul class="social">
+        <li><a class="sc-linkedin" href="https://www.linkedin.com/in/nielsenz" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        <li><a class="sc-twitter" href="https://twitter.com/Niels506" target="_blank"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="sc-github" href="https://github.com/nielsenz" target="_blank"><i class="fa fa-github"></i></a></li>
+      </ul>
+    </div>
+  </aside>
+  <main>
+
+<article>
+  <header>
+    <h1 id="what-tech-adventures-have-i-gone-on-recently">What Tech Adventures Have I Gone On&nbsp;Recently</h1>
+    <p>Posted on Sat 15 April 2017 in <a href="./category/tech-tips.html">Tech Tips</a></p>
+  </header>
+  <div>
+    <p>Finals week has had me unable to write much, but I have been coding more frequently. Below are some miscellaneous tech tips that I’ve used in the past week that are worth writing&nbsp;down. </p>
+<h2>How to get to the desktop in&nbsp;python3</h2>
+<p>I’ve been programming my way through <a href="https://automatetheboringstuff.com">Automate the Boring Stuff</a>, a book about how to use python to make the computer more productive. In order to do so, I often have to change directories in my python program to find the files to manipulate in the first place! To do so, I have a little bit of code that will help with that.
+    import os
+Thing to import that’s used to change directories
+    os.getcwd()
+Displays the current working directory. I’m still trying to figure out where everything is located on my Mac, and this is a useful debugging tool. 
+    os.chdir(“Desktop”)
+Method to change the directory. Pretty self explanatory. I often set the files I’m currently working with on my desktop, so this would be how I could change to that&nbsp;directory </p>
+<h2>Getting Subl to work on my Mac in the&nbsp;terminal</h2>
+<p>I also started to use Sublime Text to write my programs with and I’ve been researching different tips and tricks that make it more useful. I recently found some code that will let me write “subl” in the terminal and have the file pop up in Sublime Text. For example, I could write 
+    subl program.py
+And program.py pops up in Sublime Text. Super useful. You could also use commands like 
+    subl *
+And everything in the current directory will pop up in sublime text, which is crazy. The below code worked for me to get it up and running, but I do recommend Stackoverflow if it’s not working.
+    sudo rm /usr/local/bin/subl
+    sudo ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl&nbsp;/usr/local/bin/subl</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="./tag/tech-tips.html">tech tips</a>
+      <a href="./tag/python.html">python</a>
+      <a href="./tag/sublime-text.html">sublime text</a>
+    </p>
+  </div>
+</article>
+
+    <footer>
+        <p>&copy; Zach Nielsen 2018</p>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a></p>    </footer>
+  </main>
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-90668360-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Zach Nielsen's Blog ",
+  "url" : ".",
+  "image": "../images/logo.png",
+  "description": ""
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "name": "What Tech Adventures Have I Gone On Recently",
+  "headline": "What Tech Adventures Have I Gone On Recently",
+  "datePublished": "2017-04-15 00:00:00-04:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Zach Nielsen",
+    "url": "./author/zach-nielsen.html"
+  },
+  "image": "../images/logo.png",
+  "url": "./what-tech-adventures-have-i-gone-on-recently.html",
+  "description": "Recent tech upgrades now makes me more productive. Read and see!"
+}
+</script></body>
+</html>

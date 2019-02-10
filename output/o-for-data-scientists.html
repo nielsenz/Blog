@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://micro.blog/zachnielsen" rel="me" />
+  <link href="https://twitter.com/niels506" rel="me">
+  <link href="https://github.com/nielsenz" rel="me">
+  <link href="http://sitewriter.net/zachnielsen.org/micropub" rel="micropub">
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="./theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="./theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/font-awesome.min.css">
+
+
+    <link href="http://zachnielsen.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Zach Nielsen's Blog Atom">
+
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+
+<meta name="author" content="Zach Nielsen" />
+<meta name="description" content="Coding just got less complex." />
+<meta name="keywords" content="data, complexity, sql, coding">
+<meta property="og:site_name" content="Zach Nielsen's Blog"/>
+<meta property="og:title" content="O(n) for data scientists"/>
+<meta property="og:description" content="Coding just got less complex."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="./o-for-data-scientists.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2016-09-20 00:00:00-04:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="./author/zach-nielsen.html">
+<meta property="article:section" content="Explanatory"/>
+<meta property="article:tag" content="data"/>
+<meta property="article:tag" content="complexity"/>
+<meta property="article:tag" content="sql"/>
+<meta property="article:tag" content="coding"/>
+<meta property="og:image" content="../images/logo.png">
+  <title>Zach Nielsen's Blog &ndash; O(n) for data scientists</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href=".">
+        <img src="../images/logo.png" alt="Zach Nielsen" title="Zach Nielsen">
+      </a>
+      <h1><a href=".">Zach Nielsen</a></h1>
+<p>Data Driven Analyst | Transforming Numbers into Stories</p>      <nav>
+        <ul class="list">
+          <li><a href="./pages/about-page.html#about-page">Colophon</a></li>
+          <li><a href="./pages/current-resume.html#current-resume">Current&nbsp;Resume</a></li>
+          <li><a href="./pages/things-to-do-in-boston.html#things-to-do-in-boston">Things to do in&nbsp;Boston</a></li>
+        </ul>
+      </nav>
+      <ul class="social">
+        <li><a class="sc-linkedin" href="https://www.linkedin.com/in/nielsenz" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        <li><a class="sc-twitter" href="https://twitter.com/Niels506" target="_blank"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="sc-github" href="https://github.com/nielsenz" target="_blank"><i class="fa fa-github"></i></a></li>
+      </ul>
+    </div>
+  </aside>
+  <main>
+
+<article>
+  <header>
+    <h1 id="o-for-data-scientists">O(n) for data&nbsp;scientists</h1>
+    <p>Posted on Tue 20 September 2016 in <a href="./category/explanatory.html">Explanatory</a></p>
+  </header>
+  <div>
+    <p>Something that gets studied a lot in computer science is the idea of big O Notation. This basically signifies the complexity of the code that the computer is running. For example, if you give the computer some random data (call it  n random data), how many operations does the computer have to do to the data. This is measured as a function of&nbsp;n.</p>
+<p>For example, if one wanted to sort data, the fastest sort that can be completed has a big O notation of O(nlog(n)). This says that the maximum number of times it touches the data is nlog(n), for any n amount of data. Therefore, a lot of time is spent trying to reduce the complexity for any algorithm, aka how many operations the computer has to do to each bit of code. The problem we&#8217;re trying to solve is how can we make an algorithm go faster and implement fewer computations on the&nbsp;data</p>
+<h2>Big O for data&nbsp;scientists</h2>
+<p>This idea is something that data scientists can use in their own field, especially when writing <span class="caps">SQL</span> code. A lot of the code I run into is poorly written, and can be reordered in order to speed up the entire&nbsp;process. </p>
+<p>For example, say I have 1 million entries that have to be standardized as well as rolled up, so that there are only 2000 groups. Now, one may think that standardizing and then rolling the data up is the best way to do that. That would lead to 1 million entries being standardized, and then that standardized data being rolled&nbsp;up.</p>
+<p>However, if the process was reversed, as in the roll up occurs first and then the data standardized, that 1 million standardization operations that have to be performed gets brought down to 2000 (give or take). The query runs a lot faster, and you are able to be more productive while doing&nbsp;so. </p>
+<p>In other words, the rollup has to be performed regardless. However, by standardizing the data after the rollup instead of before, fewer total entries need to be standardized, thus speeding up the entire&nbsp;procedure. </p>
+<h2>Takeaways:</h2>
+<p>The main thing to remember is to think through the entire query, and then try to minimize the operations you do to the data. Can the rollup come first? Does the order matter? How can you reduce the stress on the machine? The difference between a good programmer and a great programmer is being able to write a faster procedure that solves the same&nbsp;problem.</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="./tag/data.html">data</a>
+      <a href="./tag/complexity.html">complexity</a>
+      <a href="./tag/sql.html">sql</a>
+      <a href="./tag/coding.html">coding</a>
+    </p>
+  </div>
+</article>
+
+    <footer>
+        <p>&copy; Zach Nielsen 2018</p>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a></p>    </footer>
+  </main>
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-90668360-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Zach Nielsen's Blog ",
+  "url" : ".",
+  "image": "../images/logo.png",
+  "description": ""
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "name": "O(n) for data scientists",
+  "headline": "O(n) for data scientists",
+  "datePublished": "2016-09-20 00:00:00-04:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Zach Nielsen",
+    "url": "./author/zach-nielsen.html"
+  },
+  "image": "../images/logo.png",
+  "url": "./o-for-data-scientists.html",
+  "description": "Coding just got less complex."
+}
+</script></body>
+</html>

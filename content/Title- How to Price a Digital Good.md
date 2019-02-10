@@ -1,0 +1,26 @@
+Title: How to Price a Digital Good
+Date: 2016-10-27
+Category: Background 
+Tags: economics, background, pricing, digital goods
+Slug: how-to-price-a-digital-good
+Summary: Pricing digital goods is electric 
+
+In an economic sense, pricing goods is relatively easy. The goal of any price is to maximize revenue, and that happens when marginal revenue equals marginal cost. Thus, the price should be where this occurs. 
+
+For physical goods, this is relatively easy. Marginal cost is simply the cost of producing another unit and firms (should) have enough data on what that number is. Marginal revenue is slightly more complicated; it is the revenue gained from selling one more unit. With physical goods, firms should also have enough data to estimate the demand curve and thus guess at marginal revenue. However, for digital goods the question becomes less simple. 
+## A Primer on Costs
+Costs for a good can be divided into two parts, variable and fixed. A variable cost is one that increases when the firm produces more goods, such as hiring salespeople or adding more inventory space. Fixed costs are costs that stay the same regardless of how many units you produce, such as buying the factory to produce the goods. No matter how many goods you produce, the cost of the factory will stay the same. The key takeaway here is that fixed costs don't increase marginal costs; the factory I had to buy to produce my widgets shouldn't enter my calculation when I'm figuring out how many widgets to produce now. Thus, in order to calculate the marginal costs, simply figure out the variable costs associated with the good.
+
+For a piece of software then (such as an app or an ebook) the marginal cost is zero. There are no variable costs! In order to "print" another ebook, it costs nothing. There are some fixed costs, such as hosting, but as stated above that doesn't enter into the marginal cost calculation. So now the question becomes what to charge for software? The firm could pretend that there are some some variable costs, increasing the marginal cost to something from zero. But that doesn't make any sense. I think the best way to treat a piece of software is to treat it like a utility company.
+## Utilities as a form of software
+To unpack the utility company metaphor, imagine an electric company. This electric company has high upfront costs and minimal marginal costs. In the beginning, the company has to string the power lines, install the generators, and generally build out the infrastructure. Setting up this infrastructure puts a company deep into the red. That is why there's usually only one power company in an area, because it just doesn't make sense to have two companies outlay these massive amount of funds [^1]. But after the infrastructure is put up, the company has the ability to charge whatever it wants, for a good that has basically no marginal cost. It's the dream! 
+
+A piece of software often follows the same path. Initially, the costs run deep as the development process occurs. However, once the software is built, the costs shrink and the revenue can start flooding in.
+## A NaNoWriMo Example
+As an example, we can use writing a ebook. November is [NaNoWriMo](http://nanowrimo.org/) which is the national novel writing month. The challenge is then to write an entire book in one month, which works out to writing 2500 words a day. As a bold assumption, say that I am able to crank out those 2500 words in 3 hours. So during the month of November, I have one book sized collection of words for 90 hours of work. However, someone needs to edit the book. Having no idea how long it takes to edit, say that it takes half the time it would take to write the book (so 45 hours). Ignoring all other time costs (marketing, preparing the book for submission to the online stores) the minimum amount is 135 hours worth of work. At a working wage of $20 an hour, before taxes there is an initial outlay of $2700 to become an indie author. 
+
+But! Once I finish writing the book, my marginal cost is zero. I now can pick a price and sell my book at that price point in order to recoup my initial investment. Because I sank in all the time initially, I can ideally rake the profit that this book brings in forever. If the book sells even remotely well, I'd consider that a fair trade. 
+
+To conclude, I'd consider this a small (super small. Very, very tiny, minusculely small) sample on how to price something. There are other factors to take a look at (elasticity, price point in the market, as a sales technique) but from a purely economic standpoint, this is the technique used to figure out how to price something. 
+
+[^1]:	Instead of being pure monopolies, such firms are often regulated by the government to prevent people from being priced out of the market (often called a regulated monopoly). However, if a firm is willing to pay to set up the infrastructure and enter the market, does that mean that the price is too high and competition would be good for the consumers? In addition, another question is that if the internet should be such a utility? I'd argue yes, but these questions are a post for another day.  
