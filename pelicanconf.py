@@ -48,6 +48,6 @@ DEFAULT_PAGINATION = 10
 PLUGIN_PATHS = ['./plugins']
 #PLUGINS = ['neighbors']
 
-THEME ="pelican-themes/Flex"	#Theme number 3. It works with Google Analytics!
+THEME ="local-pelican-themes/flex"	#Theme number 3. It works with Google Analytics!
 TYPOGRIFY = True
 STATIC_PATHS = ['images', 'pdfs']
