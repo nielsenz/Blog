@@ -12,7 +12,9 @@ Except I kept getting this error, regarding my .gitmodule file. After digging in
 Something that helped me out was removing it, using the below code and then adding it back in: 
 
 `rm -rf .gitmodules`
+
 `git rm --cached c3-pro-ios-framework`
+
 `git submodule add https://github.com/chb/c3-pro-ios-framework.git`
 
 Overall, the `git status` command also helps notifiy what isn't getting sent to Github and what isn't. Another super awesome command! 
