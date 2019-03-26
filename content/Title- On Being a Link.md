@@ -3,7 +3,7 @@ Date:
 Category: Analysis
 Slug: on-being-a-link
 
-[Great post](https://austinkleon.com/2019/02/21/an-intercourse-with-the-world/) yesterday from Austin Kleon about why he writes. The whole thing is worth reading, but I’m going to pull out one section:
+[Great post](https://austinkleon.com/2019/02/21/an-intercourse-with-the-world/) from Austin Kleon about why he writes. The whole thing is worth reading, but I’m going to pull out one section:
 
 > Karl Lagerfield died this week, and he said: “Books are a hard-bound drug with no danger of an overdose. I am the happy victim of books.” If books are drugs, then maybe my books are just gateway drugs that lead to better ones. I’m more than okay with that!
 
