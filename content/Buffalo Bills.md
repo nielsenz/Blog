@@ -1,5 +1,5 @@
 Title: Practice is Better than Talent
-Date: 2019-10-31
+Date: 2019-11-28
 Category: Micro
 Slug: josh-allen-growth
 
